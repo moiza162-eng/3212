@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measure enquiries in GA4 without double counting | Alex Morgan</title>
+<meta name="description" content="A button click can show intent, but it can also happen when a required field is missing.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+<main>
+  <a href="../index.html#blog">Back to the blog</a>
+  <article>
+    <header><p>Analytics</p><h1>Measure enquiries in GA4 without double counting</h1></header>
+    <section><h2>Choose a reliable success signal</h2><p>A button click can show intent, but it can also happen when a required field is missing. For a lead form, choose a completion signal that fires after a successful submission. If the form lives on a separate provider's site and completion is unavailable, measure the outbound click and clearly label it as a proxy.</p></section>
+    <section><h2>Walk through good and bad submissions</h2><p>Use the site's test environment or an agreed test process. Trigger a validation error, submit successfully and refresh the confirmation page. Inspect the events in DebugView or your tag testing tool. The failure should record no completion and the successful journey should record one. Keep personal details such as names and email addresses out of analytics payloads.</p></section>
+    <section><h2>Create a useful reporting view</h2><p>Mark the confirmed lead event as a key event if it is an important business outcome. Compare completed enquiries with the form system's totals, allowing for consent choices and differences in counting. Document the event name, trigger and owner so the next site update can be tested against the same behaviour.</p></section>
+  </article>
+</main>
+</body>
+</html>
