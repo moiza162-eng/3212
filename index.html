@@ -38,6 +38,11 @@ em{font-style:normal;background:var(--g);-webkit-background-clip:text;background
 .box h3{margin-bottom:10px;font-size:1.05rem}.box li{list-style:none;color:var(--mu)}.box ul{padding:0}
 .cert b{display:block;font-size:2rem}.cert small{color:var(--b)}
 .filters{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}.filters button{background:none;color:var(--mu);border:1px solid var(--line);padding:8px 20px;border-radius:99px;cursor:pointer;font:inherit}.filters .on{background:var(--g);color:#fff;border-color:transparent}
+.work-video{max-width:560px;margin-top:36px}
+.work-video h3{margin-bottom:12px}
+.video-player{display:grid;place-items:center;aspect-ratio:16/9;min-height:200px;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:radial-gradient(ellipse at top left,#2b2350,var(--card) 72%)}
+.video-player iframe{display:block;width:100%;height:100%;border:0}
+.video-link{display:inline-block;margin-top:10px;color:var(--b)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;text-align:left;color:inherit;padding:0;font:inherit;transition:.3s;animation:in .5s}.card:hover{transform:translateY(-8px);border-color:var(--a);box-shadow:0 20px 50px #7c5cff22}
 @keyframes in{from{opacity:0;transform:translateY(20px)}}
@@ -78,7 +83,14 @@ footer{text-align:center;color:var(--mu);padding:40px;border-top:1px solid var(-
 <section id="skills" class="sec"><h2>Skills &amp; <em>tools</em></h2><div id="skillGrid" class="grid4"></div></section>
 <section id="work" class="sec"><h2>Projects &amp; <em>case studies</em></h2>
 <p class="note">The Intech Centre case study is an independent review of public pages. Campaign examples are labelled as simulated.</p>
-<div class="filters" role="group" aria-label="Filter projects"></div><div id="cards" class="cards"></div></section>
+<div class="filters" role="group" aria-label="Filter projects"></div><div id="cards" class="cards"></div>
+<div class="work-video">
+<h3>Portfolio video</h3>
+<div class="video-player">
+<a class="btn" id="play-video" href="https://www.youtube.com/watch?v=h95cQkEWBx0">Play video</a>
+</div>
+<a class="video-link" href="https://www.youtube.com/watch?v=h95cQkEWBx0">Watch on YouTube</a>
+</div></section>
 <section id="certs" class="sec"><h2>Certi<em>fications</em></h2><p class="note">Fictional placeholders for demonstration only.</p><div id="certGrid" class="grid4"></div></section>
 <section id="contact" class="sec"><h2>Let's <em>talk</em></h2><div class="two">
 <div><p class="big">Have a growth problem? Send me the brief.</p><p><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn (placeholder)</a> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub (placeholder)</a></p><a class="btn ghost" href="data:application/pdf;base64,JVBERi0xLjMKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYxMTE4MTcwODQzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYxMTE4MTcwODQzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA1ODUKPj4Kc3RyZWFtCkdhdCVeOy9gMG8nU1lIQS8nY1U1MnEvIzNmKGF0NlJWIyFJOVVma1hiOkhuMGxHL2NxWywjOEJyIXFwSzJYKFNtUjdvNDhrRjZPUSNNMi5HXTROP0NCRDwnYW46az1UR2JgKFxDazddKFsuRTdDRjc4W1haJj5VSUpzR1BySV84ajsjW1ZKLmtVQm44YWpPTygncz8icmtvYFVMR1IzPj9SQmo2WF1ML3UwcjlBcEpKcG1ZMXFcbkhkbS9ESV5MaXJULDREWSVIOGFoSiNoWExyJm5LPCJsRS9CdEo0Vy4sYW4tcyohKz9gT0pcLmw/VUxESG80PFRXMDdCNlZlX1pvYjZLQy5WSzFEMiJjJyFfcUkrJzA0LkVpTz9BK3FbLW5tOUglaWQnWSklJmlrIS4sW2hZO0NXb0EnSiNKRDNNJGBZcyNGQE1scjA4XStOUGtELF9gUEo8STQlXHI1Zy1KRGVUNkk4TGJkKWsrRSFMcm8kcnQ6Z3AuI1YwT3BmcktJLCQoKEBuTy9fPDlkdCEzOkk7TT5IQE9kIydPRltBJkQvakNJMmNyXFBRPXM9IXUwJk0tXGYtbjNfMCUsZENxJSQ7aGtVS0E2bnQjPDZfJHJyW1lGYlZaJENVLSklYy4sWFowR2gwV1QnYVxyaVBZa0k0ZVZTZUhGdFQlMCZiM0g6Oy1sN0dmQ1daKilROktrb1plNms6SWdzLzFuTDU8JjxKZmVwNTpqNVphIm1XJTB0ITIuWzguS2ZATyQ/YnMwdHIsdGV+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDkKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAwMDA1MjQgMDAwMDAgbiAKMDAwMDAwMDU5MiAwMDAwMCBuIAowMDAwMDAwODUzIDAwMDAwIG4gCjAwMDAwMDA5MTIgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8ZTEzZjVjZTY5MWVlZTg3OTJkMWM0NjBlMzNhYzJjZGI+PGUxM2Y1Y2U2OTFlZWU4NzkyZDFjNDYwZTMzYWMyY2RiPl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyA2IDAgUgovUm9vdCA1IDAgUgovU2l6ZSA5Cj4+CnN0YXJ0eHJlZgoxNTg3CiUlRU9GCg==" download="Alex-Morgan-SAMPLE-CV.pdf">Download sample CV</a><p class="note">The CV is a clearly marked sample.</p></div>
@@ -141,6 +153,18 @@ const PROJECTS=[
  posts:["Meet the roaster","Latte art Friday","Oat milk tips","Customer of the week","Behind the bar","Weekend menu"],cal:["Mon: Educate","Wed: Behind the scenes","Fri: Product hero","Sun: Community"]}];
 /* ===== CODE ===== */
 const $=(s,r=document)=>r.querySelector(s);
+$("#play-video").addEventListener("click", event => {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  const player = document.createElement("iframe");
+  player.title = "Portfolio video on YouTube";
+  player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  player.allowFullscreen = true;
+  player.referrerPolicy = "strict-origin-when-cross-origin";
+  player.src = "https://www.youtube-nocookie.com/embed/h95cQkEWBx0?autoplay=1&playsinline=1";
+  event.currentTarget.replaceWith(player);
+  player.focus();
+});
 $("#skillGrid").innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div class="box"><h3>${k}</h3><ul>${v.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
 $("#certGrid").innerHTML=CERTS.map(c=>`<div class="box cert"><b>🎓</b><h3>${c[0]}</h3><p>${c[1]}</p><small>FICTIONAL PLACEHOLDER</small></div>`).join("");
 const svg=(d,l,c)=>{const mx=Math.max(...d),mn=Math.min(...d),p=d.map((v,i)=>[i*(500/(d.length-1))+10,110-(v-mn)/(mx-mn||1)*90]);return `<svg viewBox="0 0 520 130" role="img" aria-label="${l}"><polyline points="${p.join(" ")}" fill="none" stroke="${c}" stroke-width="4" stroke-linejoin="round"/>${p.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="5" fill="${c}"/>`).join("")}</svg><small>${l}</small>`};
